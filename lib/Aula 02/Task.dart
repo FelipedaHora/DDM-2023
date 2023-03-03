@@ -1,4 +1,6 @@
-import 'package:aula02/Aula%2002/Client.dart';
+
+
+import 'Client.dart';
 
 class Task {
   String nome;
