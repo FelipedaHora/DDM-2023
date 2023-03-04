@@ -1,6 +1,7 @@
-import 'package:aula02/Aula%2002/Client.dart';
-import 'package:aula02/Aula%2002/Task.dart';
 import 'dart:io';
+
+import '../lib/Aula 02/Client.dart';
+import '../lib/Aula 02/Task.dart';
 
 
 String verificaAprovacao() {
@@ -35,7 +36,7 @@ void verificaAprovacao2() {
 
 void main(List<String> arguments) {
 
-    /* Client cliente = Client(
+    Client cliente = Client(
         "Clayton", DateTime.now(), "000.000.000-00", "(44) 997442630", "1");
     Task tarefa = Task(
         "logo",
@@ -55,12 +56,12 @@ void main(List<String> arguments) {
     Data: ${tarefa.data}
     Prioridade: ${tarefa.prioridade}
     Status: ${tarefa.status}
-    '''); */
+    '''); 
 
     
 
-/*     String nomedavariavel = verificaAprovacao();
-    print(nomedavariavel); */
+    String nomedavariavel = verificaAprovacao();
+    print(nomedavariavel);
 
     verificaAprovacao2();
     
