@@ -63,4 +63,10 @@ void main(List<String> arguments) {
   var professorParametroFuncaoAnonima = Professor(SIAPE: 123456, nome: "teacher", CPF: "222.222.222-22", nascimento: DateTime.now(), dataEntrada: DateTime.now(), funcaoPrintaNome: (){print("nome");});
   var professorParametroArrowFunction = Professor(SIAPE: 123456, nome: "teacher", CPF: "222.222.222-22", nascimento: DateTime.now(), dataEntrada: DateTime.now(), funcaoPrintaNome: ()=> print('nome'));
 
+  print('${Professor(SIAPE: 123456, nome: "teacher", CPF: "222.222.222-22", nascimento: DateTime.now(), dataEntrada: DateTime.now(), funcaoPrintaNome: () {
+            print("nome");
+          })}');
+  print('${Professor(SIAPE: 654321, nome: "teacher2", CPF: "333.333.333-33", nascimento: DateTime.now(), dataEntrada: DateTime.now(), funcaoPrintaNome: printaNome)}');
+  print('${Professor(SIAPE: 789101112, nome: "teacher3", CPF: "444.444.444-44", nascimento: DateTime.now(), dataEntrada: DateTime.now(), funcaoPrintaNome: ()=> print('nome'))}');
+
 }
