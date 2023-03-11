@@ -2,9 +2,13 @@ import '../lib/Aula 04/Classes/aluno.dart';
 import '../lib/Aula 04/Classes/professor.dart';
 import '../lib/Aula 04/Classes/alunoComFuncao.dart';
 
-
-void minhaFuncao(){
+void minhaFuncao() {
   print("buscar livro");
+}
+
+String? printaNome(Professor professor){
+  String? nome = professor.nome;
+  return nome;
 }
 
 void main(List<String> arguments) {
@@ -22,18 +26,47 @@ void main(List<String> arguments) {
       nome: "Felipe Adrian da Hora de Arruda",
       CPF: "000.000.000-00",
       nascimento: DateTime.now(),
-      minhaFuncao: minhaFuncao );
+      minhaFuncao: minhaFuncao);
 
-  print("${aluno.nome} \n ${aluno.CPF} \n ${aluno.RA} \n ${aluno.nascimento}");
+  var alunoComFuncao2 = AlunoComFuncao(
+      RA: 123456789,
+      nome: "Felipe Adrian da Hora de Arruda",
+      CPF: "000.000.000-00",
+      nascimento: DateTime.now(),
+      minhaFuncao: () {
+        print("object");
+      });
+
+  var alunoComFuncao3 = AlunoComFuncao(
+      RA: 123456789,
+      nome: "Felipe Adrian da Hora de Arruda",
+      CPF: "000.000.000-00",
+      nascimento: DateTime.now(),
+      minhaFuncao: () => print("object")
+      );
+
+  /* print("${aluno.nome} \n ${aluno.CPF} \n ${aluno.RA} \n ${aluno.nascimento}");
   print("\n");
 
   print(
       "${aluno2.nome} \n ${aluno2.CPF} \n ${aluno2.RA} \n ${aluno2.nascimento}");
   print("\n");
 
-  var professor = Professor(987654321, "Helio Kamakawa", "111.111.111-11",
-      DateTime.now(), DateTime.now(), "heliokamakawa@ifpr.com.br");
+  print(
+      "${alunoComFuncao.nome} \n ${alunoComFuncao.CPF} \n ${alunoComFuncao.RA} \n ${alunoComFuncao.nascimento} \n ");
+  print("\n");
 
   print(
-      "${professor.nome} \n ${professor.CPF} \n ${professor.SIAPE} \n ${professor.dataEntrada} \n ${professor.email}");
+      "${alunoComFuncao2.nome} \n ${alunoComFuncao2.CPF} \n ${alunoComFuncao2.RA} \n ${alunoComFuncao2.nascimento} \n");
+  print("\n"); */
+
+  print("${Aluno.construtorNomimal(RA: 123456789, nome: "Felipe Adrian da Hora de Arruda", CPF: "000.000.000-00", nascimento: DateTime.now())}");
+
+  var professor = Professor(SIAPE: 123456, nome: "teacher", CPF: "222.222.222-22", nascimento: DateTime.now(), dataEntrada: DateTime.now(), funcaoPrintaNome: printaNome)
+
+
+/*   var professor = Professor();
+
+  print(
+      "${professor.nome} \n ${professor.CPF} \n ${professor.SIAPE} \n ${professor.dataEntrada} \n ${professor.email}") */;
 }

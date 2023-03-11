@@ -3,11 +3,19 @@ class Professor {
   int? SIAPE;
   String? nome;
   String? CPF;
-  DateTime? _nascimento; //atributo privado
+  DateTime? nascimento; //atributo privado
   DateTime? dataEntrada;
   String? email;
+  Function funcaoPrintaNome;
 
-  Professor(this.SIAPE, this.nome, this.CPF, this._nascimento, this.dataEntrada, this.email);
+  Professor({ //CONSTRUTOR NOMEADO
+    required this.SIAPE,
+    required this.nome,
+    required this.CPF, 
+    required this.nascimento, 
+    required this.dataEntrada, 
+    this.email,
+    required this.funcaoPrintaNome});
 
 
 }
