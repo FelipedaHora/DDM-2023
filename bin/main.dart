@@ -57,7 +57,7 @@ void main(List<String> arguments) {
 
 
   //INICIO DA LISTA DE EXERCICIOS
-  print("${Aluno.construtorNomimal(RA: 123456789, nome: "Felipe Adrian da Hora de Arruda", CPF: "000.000.000-00", nascimento: DateTime.now())}");
+  print("${Aluno.construtorNomimal(RA: 123456789, nome: "Felipe Adrian da Hora de Arruda", CPF: "000.000.000-00", nascimento: DateTime.now())}"); //1.4
 
   var professorParametrosFuncaoNomeada = Professor(SIAPE: 123456, nome: "teacher", CPF: "222.222.222-22", nascimento: DateTime.now(), dataEntrada: DateTime.now(), funcaoPrintaNome: printaNome);
   var professorParametroFuncaoAnonima = Professor(SIAPE: 123456, nome: "teacher", CPF: "222.222.222-22", nascimento: DateTime.now(), dataEntrada: DateTime.now(), funcaoPrintaNome: (){print("nome");});
