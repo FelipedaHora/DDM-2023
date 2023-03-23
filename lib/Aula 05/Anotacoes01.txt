@@ -1,5 +1,0 @@
-Atividade 01 Das 19h20 às 20:20
-
-- Foram respondido as 5 questões com auxílio do professor
-
-O objetivo era revisar o conteudo sem utilizar a IDE e utilizar apenas o conhecimento obtidos nas aulas passadas para realizar as questoes
