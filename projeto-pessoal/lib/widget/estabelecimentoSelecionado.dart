@@ -19,7 +19,7 @@ class EstabelecimentoSelecionado extends StatelessWidget {
 
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const HistoricoPartidas()),
+            MaterialPageRoute(builder: (context) => HistoricoPartidas()),
           );
         },
       ),
