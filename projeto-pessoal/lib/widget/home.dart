@@ -5,200 +5,101 @@ import 'package:projeto03/widget/historicoPartidas.dart';
 import 'package:projeto03/widget/perfil.dart';
 import 'package:projeto03/widget/querendoJogar.dart';
 
-/* class Home extends StatelessWidget {
-  final List<String> items =
-      List.generate(100, (index) => "Estabelecimento $index");
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Perfil()),
-              );
-            },
-          ),
-        ],
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: 16.0),
-            Text(
-              'Pesquisar',
-              style: TextStyle(fontSize: 20.0),
-            ),
-            SizedBox(height: 8.0),
-            Form(
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Procure seu estabelecimento',
-                  border: OutlineInputBorder(),
-                  filled: true,
-                ),
-              ),
-            ),
-            SizedBox(height: 16.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  'Recent items',
-                  style: TextStyle(fontSize: 20.0),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text('See all'),
-                ),
-              ],
-            ),
-            SizedBox(height: 8.0),
-            Expanded(
-              child: ListView.builder(
-                itemCount: items.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    title: Text(items[index]),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-} */
-
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  List<String> _items = [
-    'Estabelecimento 1',
-    'Estabelecimento 2',
-    'Estabelecimento 3',
-    'Estabelecimento 4',
-    'Estabelecimento 5',
-  ];
-  List<String> _selectedItems = [];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Perfil()),
-              );
-            },
-          ),
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Text('Menu'),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-            ),
-            ListTile(
-              title: Text('Querendo Jogar'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => QuerendoJogarScreen()),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('Histórico de Partidas'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HistoricoPartidas()),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('Chat'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Chat()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Pesquisar',
-                suffixIcon: Icon(Icons.search),
-              ),
-            ),
-            SizedBox(height: 16),
-            Expanded(
-              child: ListView.builder(
-                itemCount: _items.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return CheckboxListTile(
-                    title: Text(_items[index]),
-                    value: _selectedItems.contains(_items[index]),
-                    onChanged: (bool? value) {
-                      setState(() {
-                        if (value == true) {
-                          _selectedItems.add(_items[index]);
-                        } else {
-                          _selectedItems.remove(_items[index]);
-                        }
-                      });
-                    },
+            SizedBox(
+              height: 200,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Agenda()),
                   );
                 },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Image.network(
+                        'https://cdn.acritica.net/upload/dn_arquivo/2022/09/arena-esportiva-maracaju.jpeg',
+                        height: 150,
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Arena Rei do Fut',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text('Quadras societys, areia com área de lazer'),
+                    ],
+                  ),
+                ),
               ),
             ),
-            SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton(
-                  onPressed: _selectedItems.isNotEmpty
-                      ? () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Agenda()),
-                          );
-                        }
-                      : null,
-                  child: Text('Agenda'),
+            SizedBox(height: 20),
+            SizedBox(
+              height: 200,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Agenda()),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Image.network(
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv0voT-yEVv9mZRfPQH42nBKoqO82wmYesEg&usqp=CAU',
+                        height: 150,
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Arena Fut 7',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text('O templo para o mais alto nível do fut 7'),
+                    ],
+                  ),
                 ),
-              ],
+              ),
             ),
           ],
         ),
